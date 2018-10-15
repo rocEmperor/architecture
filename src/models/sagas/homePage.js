@@ -10,7 +10,6 @@ function* goAge (action) {
 }
 
 function* goAgeSaga () {
-    console.log(444);
     yield takeEvery('changeName', goAge);
 }
 
