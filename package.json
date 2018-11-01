@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "node dev-server/server.js",
-    "build": "webpack --config build/webpack.config.pro.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --profile --json > stats.json --config build/webpack.config.pro.js",
+    "test": "mocha --compilers js:babel-core/register --require ./test/setup.js"
   },
   "author": "lupeng",
   "license": "ISC",
@@ -28,12 +28,17 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "chai": "^4.2.0",
     "css-loader": "^1.0.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "express": "^4.16.4",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "html-webpack-plugin": "^3.2.0",
+    "jsdom": "^13.0.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
+    "mocha": "^5.2.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "react-hot-loader": "^4.3.11",
