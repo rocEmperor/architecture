@@ -4,7 +4,7 @@ function* goAge (action) {
     yield put({
         type: 'changeNameStore',
         payload: {
-            name: `小六子${Math.random()}`
+            name: action.payload.name
         }
     })
 }

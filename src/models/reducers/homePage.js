@@ -1,5 +1,5 @@
 const initState = {
-    name: '李四'
+    name: '王五'
 };
 let homePage = (state = initState, action) => {
     switch (action.type) {
