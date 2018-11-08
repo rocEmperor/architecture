@@ -26,7 +26,7 @@ class HomePage extends Component {
         let { homePageModel } = this.props;
         return (
             <div className="home-page">
-                <div onClick={() => this.changeName()}>111我是首qq页思</div>
+                <div onClick={() => this.changeName()} className="click-btn">111我qq是首qq页思</div>
                 <div>{homePageModel.name}</div>
                 <Chlid />
             </div>
