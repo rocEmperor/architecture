@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import './homePage.less';
-
+import './homePage.less';
+let a = 0;
 class Chlid extends Component {
     render() {
         return (
@@ -26,16 +26,15 @@ class HomePage extends Component {
         let { homePageModel } = this.props;
         return (
             <div className="home-page">
-<<<<<<< HEAD
-                <div onClick={() => this.changeName()} className="click-btn">111我qq是首qq页思</div>
-                <div>{homePageModel.name}</div>
-=======
                 <h1 className="title">首页</h1>
                 <div onClick={() => this.changeName()} className="click-btn">
                     点击我改变模特的姓名,赶快测试吧
                 </div>
+                <div className="img">
+                    
+                </div>
                 <div><b>模特：</b><span className="name">{homePageModel.name}</span></div>
->>>>>>> 585ded8ad9b3c3ec602c98c5dd073f6cf04ec6b2
+                <img src="../../images/bg.jpg"/>
                 <Chlid />
             </div>
         )

@@ -5,6 +5,8 @@ const ROOT_PATH = path.resolve(__dirname);
 const APP_PATH = path.resolve(ROOT_PATH, '../src');
 const ENTRY_PATH = path.resolve(APP_PATH, 'index.js');
 const BUILD_PATH = path.resolve(ROOT_PATH, '../dist');
+const NODE_ENV = process.env.NODE_ENV;
+
 module.exports = {
     entry: {
         app: [
@@ -15,9 +17,9 @@ module.exports = {
     },
     output: {
         path: BUILD_PATH,
-        publicPath: '/assets/',
-        filename: '[name].js',
-        chunkFilename: "[name].js"
+        publicPath: NODE_ENV === 'development' ? '/assets/' : '',
+        filename: NODE_ENV === 'development' ? 'js/[name].js' : 'js/[name]-[hash:8].js',
+        chunkFilename: NODE_ENV === 'development' ? 'js/[name].js' : 'js/[name]-[hash:8].js'
     },
     resolve: {
         extensions: ['.js', '.jsx', '.less', '.scss', '.css'], // 后缀名自动补全
@@ -49,7 +51,8 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 8192
+                            limit: 8192,
+                            name: 'images/[name].[ext]'
                         }
                     }
                 ]
