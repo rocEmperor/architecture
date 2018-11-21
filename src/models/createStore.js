@@ -8,16 +8,16 @@ import logger from 'redux-logger'
 const sagaMiddleware = createSagaMiddleware();
 
 const middleWares = [
-    sagaMiddleware,
-    logger
+  sagaMiddleware,
+  logger
 ];
 
 let store = createStore(rootReducer, undefined, compose(
-    applyMiddleware(...middleWares),
+  applyMiddleware(...middleWares),
 ));
 
 export default function configureStore() {
-    // 运行saga
-    sagaMiddleware.run(rootSaga);
-    return { store }
+  // 运行saga
+  sagaMiddleware.run(rootSaga);
+  return { store }
 }

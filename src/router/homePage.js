@@ -1,4 +1,4 @@
-import asyncComponent from '../common/asyncComponent';
+import asyncComponent from '../common/AsyncComponent/asyncComponent';
 
 const HomePageRouter = [
   {

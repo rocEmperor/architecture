@@ -12,14 +12,14 @@ const app = new express();
 
 app.use(serveStatic(path.resolve(__dirname, '../src')));
 app.use(devMiddleware(compiler, {
-    noInfo: true,
-    // 如果false，将会给你列出一大堆无聊的信息。
-    publicPath: config.output.publicPath,
-    stats: {
-        colors: true
-    }
+  noInfo: true,
+  // 如果false，将会给你列出一大堆无聊的信息。
+  publicPath: config.output.publicPath,
+  stats: {
+    colors: true
+  }
 }));
 app.use(hotMiddleware(compiler));
 app.listen(port, () => {
-    console.log('server start on 127.0.0.1:7000');
+  console.log('server start on 127.0.0.1:7000');
 });
